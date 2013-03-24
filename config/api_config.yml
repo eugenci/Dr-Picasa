@@ -1,0 +1,22 @@
+defaults: &defaults
+  base_url: 'http://api.sponsorpay.com/feed/v1'
+  client_id: "your client id"
+  email_address: "email address as per google api config"
+  client_secret: "your device id here"
+  redirect_uris: 
+  javascript_origins:
+
+development:
+  <<: *defaults
+  client_id: 571402606052.apps.googleusercontent.com
+  email_address: 571402606052@developer.gserviceaccount.com
+  client_secret: Sc6oSwcYCK6wilzCs73jja3u
+
+test:
+  <<: *defaults
+  client_id: blah.apps.googleusercontent.com
+  email_address: blah@developer.gserviceaccount.com
+  client_secret: blahblah
+
+production:
+  <<: *defaults
