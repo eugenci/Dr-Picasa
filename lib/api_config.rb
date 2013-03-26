@@ -1,6 +1,6 @@
 class ApiConfig
 
-  CONFIG_PARAM_KEYS = %w(client_secret, client_id, base_url,)
+  BASE_PARAMS = %w(site authorize_url token_url)
 
   attr :config
 
@@ -22,7 +22,6 @@ class ApiConfig
   end
 
   def self.base_params
-    ApiConfig.new.config.slice(*CONFIG_PARAM_KEYS)
+    ApiConfig.new.config.slice(*BASE_PARAMS)
   end
-
 end

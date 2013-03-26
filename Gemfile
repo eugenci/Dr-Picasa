@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 gem 'haml'
-gem "activeresource-response"
+gem 'hpricot'
+gem 'oauth2'
+gem 'httparty'
 
 group :development do
  gem 'thin'

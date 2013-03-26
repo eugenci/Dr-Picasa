@@ -1,16 +1,19 @@
 defaults: &defaults
-  base_url: 'http://api.sponsorpay.com/feed/v1'
+  base_url: "https://picasaweb.google.com/data/feed/api/"
   client_id: "your client id"
   email_address: "email address as per google api config"
   client_secret: "your device id here"
-  redirect_uris: 
-  javascript_origins:
+  scope: "http://picasaweb.google.com/data/"
+  site: 'https://accounts.google.com'
+  redirect_uri: "http://localhost:3000/callback"
+  authorize_url: '/o/oauth2/auth'
+  token_url: '/o/oauth2/token'
 
 development:
   <<: *defaults
-  client_id: 571402606052.apps.googleusercontent.com
-  email_address: 571402606052@developer.gserviceaccount.com
-  client_secret: Sc6oSwcYCK6wilzCs73jja3u
+  client_id: 571402606052-0v1840dkbvbhn15fbct9kbbv8hfv3ucp.apps.googleusercontent.com
+  email_address: 571402606052-0v1840dkbvbhn15fbct9kbbv8hfv3ucp@developer.gserviceaccount.com
+  client_secret: eVNX6AfIcSg52Vv5LpIdPQAO
 
 test:
   <<: *defaults

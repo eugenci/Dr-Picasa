@@ -1,0 +1,31 @@
+ul.albums {
+  width: 100%;
+}
+
+ul.albums li {
+  float: left;
+  padding: 1em;
+  text-align: center;
+  list-style-type: none;
+}
+
+ul.albums li div.title {
+ padding: 0.3em;
+ text-align: center;
+}
+
+ul.images {
+  width: 100%;
+}
+
+ul.images li {
+  float: left;
+  padding: 1em;
+  text-align: center;
+  list-style-type: none;
+}
+
+ul.images li div.title {
+ padding: 0.3em;
+ text-align: center;
+}
