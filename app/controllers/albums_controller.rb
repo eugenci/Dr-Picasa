@@ -10,6 +10,11 @@ class AlbumsController < ApplicationController
               else
                 []
               end
+
+    @images.collect! do |image|
+      image.update_comments(session[:token],
+                            from: {imageid: image.id, albumid: params[:id]})
+    end
   end
 
 end
