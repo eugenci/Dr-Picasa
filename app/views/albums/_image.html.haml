@@ -1,7 +1,8 @@
 %li
   = image_tag image.thumbnail_url
-  = image.comments.each do |c|
-    = c.content
+  - image.comments.each do |c|
+    %div
+      = c.content
   %p
     = form_tag comment_url do
       = hidden_field_tag :albumid, image.albumid

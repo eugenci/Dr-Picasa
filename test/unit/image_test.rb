@@ -5,7 +5,7 @@ require_relative '../test_helper'
 class ImageTest < ActiveSupport::TestCase
   context "image" do
     setup do
-      file = File.join(File.dirname(__FILE__),'images.xml')
+      file = File.join(File.dirname(__FILE__),'../files/images.xml')
       @images_xml = File.open(file).read
     end
 

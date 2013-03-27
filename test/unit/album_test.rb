@@ -5,7 +5,7 @@ require_relative '../test_helper'
 class AlbumTest < ActiveSupport::TestCase
   context "Album" do
     setup do
-      file = File.join(File.dirname(__FILE__),'albums.xml')
+      file = File.join(File.dirname(__FILE__),'../files/albums.xml')
       @albums_xml = File.open(file).read
     end
 

@@ -5,7 +5,7 @@ require_relative '../test_helper'
 class CommentsTest < ActiveSupport::TestCase
   context "Comments" do
     setup do
-      file = File.join(File.dirname(__FILE__),'comments.xml')
+      file = File.join(File.dirname(__FILE__),'../files/comments.xml')
       @comments_xml = File.open(file).read
     end
 
