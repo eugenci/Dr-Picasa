@@ -1,11 +1,12 @@
 class Base
 
-  attr_accessor :id, :title, :thumbnail_url, :comments
+  attr_accessor :id, :title, :thumbnail_url, :comments, :content
 
   def initialize(record)
     @id            = record.at('gphoto:id').innerText
     @title         = record.at('title').innerText
-    @thumbnail_url = record.at('media:group').search('media:thumbnail').last.get_attribute('url')
+    @thumbnail_url = (c = record.at('media:group')).present? && c.search('media:thumbnail').last.get_attribute('url')
+    @content       = (c = record.at('content')).present? && c.innerText 
   end
 
   class << self

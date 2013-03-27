@@ -1,2 +1,10 @@
 %li
   = image_tag image.thumbnail_url
+  = image.comments.each do |c|
+    = c.content
+  %p
+    = form_tag comment_url do
+      = hidden_field_tag :albumid, image.albumid
+      = hidden_field_tag :photoid, image.id
+      = text_area_tag    :comment
+      = submit_tag 'comment'
