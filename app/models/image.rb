@@ -6,8 +6,7 @@ class Image < Base
     def find(token, options = {})
       albumid = options[:from]
 
-      url = ApiConfig.base_url +
-            'user/default/albumid/' + albumid + '?access_token='+ token.to_s
+      url = '/user/default/albumid/' + albumid + '?access_token='+ token.to_s
 
       find_every(token, url, options)
     end

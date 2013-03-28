@@ -1,5 +1,9 @@
 class Base
 
+  include HTTParty
+  base_uri ApiConfig.base_url
+  default_params :v => '2'
+
   attr_accessor :id, :title, :thumbnail_url, :comments, :content
 
   def initialize(record)
@@ -19,7 +23,8 @@ class Base
     end
 
     def find_every(token, url, options = {})
-      r = HTTParty.get(url, headers: {'GData-Version' => '2'}) 
+      r = get(url)
+
       doc = Hpricot(r.parsed_response) if r.respond_to?(:parsed_response)
 
       instanciate_collection( doc.search('//entry') ) if doc.respond_to?(:search)

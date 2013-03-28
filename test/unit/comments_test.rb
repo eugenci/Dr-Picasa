@@ -21,5 +21,12 @@ class CommentsTest < ActiveSupport::TestCase
         assert comment.content =~ /I say! What an amusing image!/
       end
     end
+
+    should "post a http request when creating a comment" do
+      stub_post = stub_request(:post, ApiConfig.base_url+"user/default/albumid/albumid/photoid/photoid?access_token=token&v=2")
+
+      Comment.create('albumid','photoid','this is a comment','token')
+      assert_requested(stub_post, body: Comment.body('this is a comment'))
+    end
   end
 end
