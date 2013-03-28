@@ -13,6 +13,3 @@ should look like this:
   album.
 * User is able to comment an images
 
-## Solution 
-
-## Usage
